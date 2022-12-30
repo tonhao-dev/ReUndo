@@ -3,10 +3,13 @@ import { reducer } from './reducer';
 import { ActionType, IReducer, IState, IUseActions } from './types';
 
 export function useActions<Type>(): IUseActions<Type> {
-  const [state, dispatch] = useReducer<Reducer<IState<Type>, IReducer<Type>>>(reducer, {
-    array: [],
-    pointer: 0,
-  });
+  const [{ array, pointer }, dispatch] = useReducer<Reducer<IState<Type>, IReducer<Type>>>(
+    reducer,
+    {
+      array: [],
+      pointer: 0,
+    }
+  );
 
   function add(item: Type) {
     dispatch({ type: ActionType.Add, payload: item });
@@ -20,5 +23,5 @@ export function useActions<Type>(): IUseActions<Type> {
     dispatch({ type: ActionType.Reundo, payload: undefined });
   }
 
-  return { add, reundo, undo, array: state.array };
+  return { add, reundo, undo, array: array.slice(0, pointer) };
 }
