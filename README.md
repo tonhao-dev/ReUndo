@@ -1,7 +1,5 @@
 # ReUndo
 
-<p align="center" style="height: 30px; font-size: 40px; display: block;align-items:center;justify-content: center; line-height: 24px"><img style="height: 40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Eo_circle_red_blank.svg/1200px-Eo_circle_red_blank.svg.png"/>ReUndo</p>
-
 <p align="center"><img src="https://i.ibb.co/KbmYbbh/image.png" /></p>
 
 Crie círculos sem medo algum, e tenha liberdade para se arrepender e se arrepender de novo, desfazendo-os ou refazendo-os.
