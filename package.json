@@ -7,7 +7,17 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "clear:android": "cd android && ./gradlew clean && cd ../",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "clear:modules": "rm -rf node_modules/ && yarn install",
+    "clear:pods": "cd ios && rm -rf ~/Library/Caches/CocoaPods && rm -rf Pods && pod deintegrate && pod setup && pod install && cd ..",
+    "update-stories": "sb-rn-get-stories --config-path .ondevice",
+    "prestart": "yarn update-stories",
+    "storybook-watcher": "sb-rn-watcher --config-path .ondevice",
+    "storybook": "start-storybook -p 6006",
+    "android:build": "cd android && ./gradlew assembleRelease && cd ../",
+    "build-storybook": "build-storybook",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "18.1.0",
