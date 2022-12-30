@@ -1,4 +1,5 @@
 import { Reducer, useReducer } from 'react';
+import { truthArray } from './functions';
 import { reducer } from './reducer';
 import { ActionType, IReducer, IState, IUseActions } from './types';
 
@@ -23,5 +24,5 @@ export function useActions<Type>(): IUseActions<Type> {
     dispatch({ type: ActionType.Reundo, payload: undefined });
   }
 
-  return { add, reundo, undo, array: array.slice(0, pointer) };
+  return { add, reundo, undo, array: truthArray({ array, pointer }) };
 }
