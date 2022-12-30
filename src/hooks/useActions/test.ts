@@ -17,6 +17,21 @@ describe('hooks/useActions', () => {
     });
   });
 
+  it('Should add an item in array after undo', () => {
+    const array = [1, 2, 3, 4];
+    const item = 5;
+
+    const state: IState<number> = {
+      array,
+      pointer: 4,
+    };
+
+    expect(add(undo(state), item)).toEqual({
+      array: [1, 2, 3, 5],
+      pointer: 4,
+    });
+  });
+
   it('Should not make anything after undo on empty list', () => {
     const state: IState<number> = {
       array: [],

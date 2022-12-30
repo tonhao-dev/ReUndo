@@ -1,8 +1,12 @@
 import { IState } from './types';
 
+export function truthArray<Type>({ array, pointer }: IState<Type>): Type[] {
+  return array.slice(0, pointer);
+}
+
 export function add<Type>(state: IState<Type>, item: Type): IState<Type> {
   return {
-    array: [...state.array, item],
+    array: [...truthArray(state), item],
     pointer: state.pointer + 1,
   };
 }
