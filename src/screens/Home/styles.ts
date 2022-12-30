@@ -11,11 +11,11 @@ export const Container = styled.TouchableOpacity.attrs({
 
 export const Wrapper = styled.View`
   width: 100%;
-  height: 500px;
   justify-content: space-evenly;
   flex-direction: row;
+  margin-bottom: 200px;
 `;
 
 export const Text = styled.Text`
-  font-size: 16px;
+  font-size: 30px;
 `;
